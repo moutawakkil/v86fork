@@ -316,47 +316,44 @@
 
         <br>
         <button id="start_emulation">Start Emulation</button>
- </div>
+<div id="runtime_options" style="display: none; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; padding: 10px; background: #f5f5f5; border-radius: 5px;">
 
-    <div id="runtime_options" style="display: none">
-        <input type="button" value="Pause" id="run">
-        <input type="button" value="Reset" id="reset">
-        <input type="button" value="Exit" id="exit">
-        <input type="button" value="Send Ctrl-Alt-Del" id="ctrlaltdel">
-        <input type="button" value="Send Alt-Tab" id="alttab">
-        <input type="button" value="Get floppy image" id="get_fda_image">
-        <input type="button" value="Get second floppy image" id="get_fdb_image">
-        <input type="button" value="Get hard disk image" id="get_hda_image">
-        <input type="button" value="Get second hard disk image" id="get_hdb_image">
-        <input type="button" value="Get CD-ROM image" id="get_cdrom_image">
-        <input type="button" value="Insert floppy image" id="change_fda_image">
-        <input type="button" value="Insert second floppy image" id="change_fdb_image">
-        <input type="button" value="Insert CD image" id="change_cdrom_image" title="Either a single .iso file or multiple files of any type">
-        <input type="button" value="Save State" id="save_state">
-        <input type="button" value="Load State" id="load_state"> <input type="file" style="display: none" id="load_state_input">
-        <input type="button" value="Memory Dump" id="memory_dump">
-        <input type="button" value="Capture network traffic" id="capture_network_traffic" title="In wireshark: file -> import from hex -> tick direction indication, timestamp %s.%f">
-        <input type="button" value="Disable mouse" id="toggle_mouse">
-        <input type="button" value="Lock mouse" id="lock_mouse">
-        <input type="button" value="Go fullscreen" id="fullscreen">
-        <input type="button" value="Take screenshot" id="take_screenshot">
-        <input type="button" value="Mute" id="mute">
-        <input type="button" value="Enable theatre mode" id="toggle_theatre">
+    <!-- الأزرار التي ستظهر في سطر واحد -->
+    <div style="display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 5px; padding: 5px;">
+        <input type="button" value="Pause" id="run" style="white-space: nowrap;">
+        <input type="button" value="Reset" id="reset" style="white-space: nowrap;">
+        <input type="button" value="Exit" id="exit" style="white-space: nowrap;">
+        <input type="button" value="Send Ctrl-Alt-Del" id="ctrlaltdel" style="white-space: nowrap;">
+        <input type="button" value="Send Alt-Tab" id="alttab" style="white-space: nowrap;">
+        <input type="button" value="Get floppy image" id="get_fda_image" style="white-space: nowrap;">
+        <input type="button" value="Get second floppy image" id="get_fdb_image" style="white-space: nowrap;">
+        <input type="button" value="Get hard disk image" id="get_hda_image" style="white-space: nowrap;">
+        <input type="button" value="Get second hard disk image" id="get_hdb_image" style="white-space: nowrap;">
+        <input type="button" value="Get CD-ROM image" id="get_cdrom_image" style="white-space: nowrap;">
+        <input type="button" value="Insert floppy image" id="change_fda_image" style="white-space: nowrap;">
+        <input type="button" value="Insert second floppy image" id="change_fdb_image" style="white-space: nowrap;">
+        <input type="button" value="Insert CD image" id="change_cdrom_image" style="white-space: nowrap;" title="Either a single .iso file or multiple files of any type">
+        <input type="button" value="Save State" id="save_state" style="white-space: nowrap;">
+        <input type="button" value="Load State" id="load_state" style="white-space: nowrap;">
+        <input type="button" value="Memory Dump" id="memory_dump" style="white-space: nowrap;">
+        <input type="button" value="Capture network traffic" id="capture_network_traffic" style="white-space: nowrap;" title="In wireshark: file -> import from hex -> tick direction indication, timestamp %s.%f">
+        <input type="button" value="Disable mouse" id="toggle_mouse" style="white-space: nowrap;">
+        <input type="button" value="Lock mouse" id="lock_mouse" style="white-space: nowrap;">
+        <input type="button" value="Go fullscreen" id="fullscreen" style="white-space: nowrap;">
+        <input type="button" value="Take screenshot" id="take_screenshot" style="white-space: nowrap;">
+        <input type="button" value="Mute" id="mute" style="white-space: nowrap;">
+        <input type="button" value="Enable theatre mode" id="toggle_theatre" style="white-space: nowrap;">
         <input type="button" style="display: none" value="Enable zoom to fit" id="toggle_zoom_to_fit">
-
-        <label>
-            Scale:
-            <input type="number" min="0.25" step="0.25" value="1.0" id="scale" style="width: 50px">
-        </label>
     </div>
-    <pre style="display: none" id="loading"></pre>
-</div>
 
-<div id="screen_container" style="display: none">
-    <div id="screen"></div>
-    <canvas id="vga"></canvas>
-    <div style="position: absolute; top: 0; z-index: 10">
-        <textarea class="phone_keyboard"></textarea>
+    <!-- الزرين الأخيرين في سطر جديد -->
+    <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd; width: 100%;">
+        <input type="file" style="display: none" id="load_state_input">
+        
+        <label style="display: flex; align-items: center; gap: 5px;">
+            Scale:
+            <input type="number" min="0.25" step="0.25" value="1.0" id="scale" style="width: 60px; padding: 2px 5px;">
+        </label>
     </div>
 </div>
     <br>
